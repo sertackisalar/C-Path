@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace IF_ELSEIF_ELSE
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Merhaba, Lütfen Adınızı Yazınız.");
+            String user1_name = Console.ReadLine();
+
+            Console.WriteLine(user1_name+" "+"Lütfen Başarı Puanını Gir.");
+            string user1_score = Console.ReadLine();
+
+            int score1 = int.Parse(user1_score);
+
+            if (score1  > 70)
+            {
+                Console.WriteLine(user1_name + " " + "Tebrikler, Başarılı Oldun.");
+                Console.ReadLine();
+
+
+            }
+
+            else if ( 50 < score1 && score1 < 70 )
+            {
+                Console.WriteLine(user1_name + " " + "İyisin Ama Biraz Daha Çalışmalısın.");
+                Console.ReadLine();
+
+            }
+            else
+            {
+                Console.WriteLine(user1_name + " " + "Üzgünüm, Lütfen Tekrar Deneyin.");
+                Console.ReadLine();
+            
+            }
+
+
+
+           
+
+        }
+
+    }
+}
