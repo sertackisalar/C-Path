@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReadLine
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //Comment allows user to read text that is in code <Console.WriteLine("bla bla bla") > 
+            //That comment prints one below the other.
+            Console.WriteLine("Merhaba, Lütfen Adını Yaz.");
+            // Comment allows user to assign. < Console.ReadLine() > But you should define a variable firstly.
+            String ad = Console.ReadLine();
+            //That comment prints one side by side.  
+            Console.Write("Seninle Tanıştığıma Memnun Oldum,"+ ad );
+            Console.Write(" "+ "Lütfen Soyadını Yaz.");   
+            //Defining a variable for users to assign.  
+            String soyad = Console.ReadLine();
+            // Wanting to print all of knowledge that assigned.
+            Console.WriteLine("Merhaba," + " " + ad + " " + soyad +" " + "nasılsın?");
+            //Wanting to see all of printed comments on the screen.
+            Console.ReadLine();
+
+        }
+    }
+}
