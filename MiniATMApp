@@ -22,24 +22,33 @@ namespace MiniATMApp
                 " Merhaba, Yapmak İstediğiniz İşlemi Tuşlayınız.");
             int requested_transaction = Convert.ToInt32(Console.ReadLine());
 
-
-            if( requested_transaction == 1 )
+            if (requested_transaction == 1)
             {
-                Console.WriteLine(" Mevcut Bakiyeniz : "+bakiye);
-                Console.Read();                
-             }
-            else if ( requested_transaction == 2 )
-            {
-                Console.WriteLine(" Çekmek İstediğiniz Tutarı Giriniz.");
-                int takingoutmoney = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine(" Kalan Tutar : "+(bakiye - takingoutmoney));
+                Console.WriteLine(" Mevcut Bakiyeniz : " + bakiye);
                 Console.Read();
             }
-            else if (requested_transaction == 3 )
+            else if (requested_transaction == 2)
+            {
+                
+                    Console.WriteLine(" Çekmek İstediğiniz Tutarı Giriniz.");
+                    int takingoutmoney = Convert.ToInt32(Console.ReadLine());
+
+                if (takingoutmoney < bakiye)
+                {
+                    Console.WriteLine(" Kalan Tutar : " + (bakiye - takingoutmoney));
+                    Console.Read();
+                }
+                else
+                {
+                    Console.WriteLine(" Bakiyeniz Yetersiz, Mevcut Bakiyeniz :"+bakiye);
+                    Console.Read();
+                }
+                }
+            else if (requested_transaction == 3)
             {
                 Console.WriteLine(" Eklemek İstediğiniz Tutarı Giriniz.");
                 int addingmoney = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine(" Yeni Bakiyeniz : " + (bakiye + addingmoney));              
+                Console.WriteLine(" Yeni Bakiyeniz : " + (bakiye + addingmoney));
                 Console.Read();
 
             }
