@@ -1,0 +1,55 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MiniATMApp
+{
+    internal class Program
+    {
+       public static void Main(string[] args)
+        {
+            int bakiye = 15000 ;
+
+            Console.WriteLine(" TRANSACTIONS;\r\n    " +
+                " \r\n    "+
+                " Press 1 : if you want to see your current balance,\r\n    " +
+                " Press 2 : if you want to take out as much money as you want,\r\n    " +
+                " Press 3 : if you want to add money to account,\r\n    " +
+                " Press 4 : QUIT \r\n " +
+                " \r\n "+
+                " Merhaba, Yapmak İstediğiniz İşlemi Tuşlayınız.");
+            int requested_transaction = Convert.ToInt32(Console.ReadLine());
+
+
+            if( requested_transaction == 1 )
+            {
+                Console.WriteLine(" Mevcut Bakiyeniz : "+bakiye);
+                Console.Read();                
+             }
+            else if ( requested_transaction == 2 )
+            {
+                Console.WriteLine(" Çekmek İstediğiniz Tutarı Giriniz.");
+                int takingoutmoney = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine(" Kalan Tutar : "+(bakiye - takingoutmoney));
+                Console.Read();
+            }
+            else if (requested_transaction == 3 )
+            {
+                Console.WriteLine(" Eklemek İstediğiniz Tutarı Giriniz.");
+                int addingmoney = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine(" Yeni Bakiyeniz : " + (bakiye + addingmoney));              
+                Console.Read();
+
+            }
+
+            else
+            {
+                Console.WriteLine("    Yine Bekleriz.");
+                Console.Read();
+            }
+
+        }
+    }
+}
