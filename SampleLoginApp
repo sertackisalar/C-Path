@@ -1,0 +1,55 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SampleLoginApp
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            /* this is a user login page application;
+                1.the user has 3 login attempts.
+                2.user has to sign in with user name and password.                               
+             */
+            //Description;
+            string name = "sertac";
+            string password = "123";
+
+
+            for (int a = 1; a <= 3; a++)
+            {
+                Console.WriteLine("Kullanıcı Adını Giriniz.");
+                string kullaniciadi = Console.ReadLine();
+
+                Console.WriteLine("Şifrenizi Giriniz.");
+                string sifre = Console.ReadLine();
+
+                if (password == sifre)
+                {
+                    Console.WriteLine("Başarılı Bir Şekilde Giriş Yaptınız.");
+                    break;
+                }
+
+                else
+                {
+                    Console.WriteLine("Şifreniz yada Kullanıcı Adınız Yanlıştır. Lütfen Doğru Giriniz..\r\n" +
+                        "Kalan Hakkınız : " + (3 - a));
+
+                    if (password == sifre)
+                    {
+                        Console.WriteLine("Başarılı Bir Şekilde Giriş Yaptınız.");
+                        break;
+                    }
+                }
+
+
+            }
+            Console.Read();
+
+        }
+    }
+}
