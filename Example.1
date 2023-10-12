@@ -1,0 +1,88 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Example._1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            /*
+           1. User enters a number into the system between 0 and 100.
+           2. All numbers from 0 to entered number will sum.
+           3. and i will divide all total by the number user entered. 
+           4. if average score is grater than 50, print average score is grater than 50.
+              if average score is less than 50, print average score is less than 50.
+           5. user has 3 entry attempts.
+           6. show row number on the print screen.
+            */
+
+            int girishakkı = 3;
+            int baslangıcdegeri = 0;
+            int satirsayisi = 1;
+
+            while (true)
+            {
+
+                Console.WriteLine("Lütfen 0-100 arasında bir tam sayı sayı giriniz..");
+                int sayi = Convert.ToInt32(Console.ReadLine());
+
+                if (sayi <= 100)
+                {
+                    for (int a = 1; a <= sayi; a++)
+                    {
+
+                        baslangıcdegeri = baslangıcdegeri + a;  // baslangıcdegeri += a ;
+
+                        Console.WriteLine(satirsayisi + "." + "Toplam : " + baslangıcdegeri);
+                        satirsayisi++;
+
+                        if (sayi == a)
+                        {
+                            break;
+                        }
+
+                    }
+
+                    double sonuc = (double)baslangıcdegeri / sayi;
+
+                    if (sonuc < 50)
+                    {
+                        Console.WriteLine("İslem : " + baslangıcdegeri + "/" + sayi + "\r\nSonuc : " + sonuc + "\r\nOrtalama 50'den az..");
+                    }
+                    else if (sonuc > 50)
+                    {
+                        Console.WriteLine("İslem : " + baslangıcdegeri + "/" + sayi + "\r\nSonuc : " + sonuc + "\r\nOrtalama 50'den büyük..");
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("İslem : " + baslangıcdegeri + "/" + sayi + "\r\nSonuc : " + sonuc + "\r\nOrtalama 50'ye eşit..");
+                    }
+                    break;
+                }
+
+                else if (sayi > 100)
+                {
+
+                    if (girishakkı == 0)
+                    {
+                        Console.WriteLine("Denemeniz bitmiştir...");
+                        break;
+                    }
+                    else if (girishakkı <= 3)
+                    {
+                        Console.WriteLine("Girdiğiniz değer aralığın dışındadır.\r\n" + "Kalan giriş hakkınız : " + girishakkı);
+                        girishakkı--;
+                    }
+                }
+
+            }
+            Console.Read();
+        }
+    }
+}
