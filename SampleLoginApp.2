@@ -1,0 +1,67 @@
+using System;
+using System.Collections.Generic;
+using System.IO.Ports;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SampleLoginApp2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+            /* information;
+             *  1. user has to sign in but has 3 login attempts.
+             *  2.user has to sign in with user name and password.
+             
+            THIS APP INCLUDES WHILE LOOP.
+            */
+            // UserName = "sertac"
+            // Password = "123"
+
+            int haksayisi = 3;
+
+            while (true)
+            {
+                Console.WriteLine("Adınızı Yazınız. ");
+                String kullaniciadi = Console.ReadLine();
+
+                Console.WriteLine("Şifrenizi Yazınız. ");
+                String sifre = Console.ReadLine();
+
+                if (kullaniciadi == "sertac" && sifre == "123")
+                {
+                    Console.WriteLine("Başarılı Şekilde Giriş Yaptınız..");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Kullanıcı Adı yada Şifre Hatalı !");
+
+                    if (haksayisi == 0)
+                    {
+                        Console.WriteLine(" Giriş Hakkınız Dolmuştur. Lütfen Daha Sonra Tekrar Deneyiniz..");
+                        break;
+                    }
+                    else
+                    {
+                     
+
+                        Console.WriteLine("Kalan Giriş Hakkınız : " + (haksayisi-1));
+                        haksayisi--;
+                        if (haksayisi == 0)
+                        {
+                            break;
+                        }
+                    }
+                }
+            }
+
+            Console.Read();
+
+        }
+    }
+}
