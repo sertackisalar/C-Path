@@ -1,0 +1,208 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ChecktheArray
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            /* Tasks about Array;
+            1.print even values.
+            2.print odd values.
+            3.print the value the most repeated.
+            4.print the three value the most repeated.
+            5.print how many values there are.   
+            6.create a new array for user, if user wants.
+             */
+
+            int[] dizi = new int[100];
+            int sayi = 1;
+            int secim;
+
+            #region Creating arrays for user
+
+            Console.WriteLine("1: Diziyi otomatik başlangıç değeri ile başlatmak için 1'e basınız. \r\n2: Dizinin başlangıç değerini kendiniz belirkemek için 2'e basınız.");
+            secim = Convert.ToInt32(Console.ReadLine());
+
+            if (secim == 2)
+            {
+                Console.WriteLine("Sayidizisinin başlangıc değerini giriniz..");
+                sayi = Convert.ToInt32(Console.ReadLine());
+
+                for (int i = 0; i < dizi.Length; i++)
+                {
+                    Console.WriteLine((i + 1) + ". " + sayi);
+                    dizi[i] = sayi;
+                    if (sayi % 2 == 0)
+                    {
+                        sayi = (4 * sayi) + 5;
+
+                    }
+                    else if (sayi % 2 == 1)
+                    {
+                        sayi = (3 * sayi) + 5;
+                    }
+
+                    // i dont want to the number of array bigger than 99.
+
+                    if (sayi >= 99)
+                    {
+                        string sayi2 = sayi.ToString();
+                        sayi2 = sayi2.Substring(0, 2);
+                        sayi = int.Parse(sayi2);
+                    }
+                }
+            }
+            if (secim == 1)
+            {
+                for (int i = 0; i < dizi.Length; i++)
+                {
+                    Console.WriteLine((i + 1) + ". " + sayi);
+                    sayi = 2 * sayi + 5;
+                    dizi[i] = sayi;
+
+                    if (sayi >= 99)
+                    {
+                        string sayi2 = sayi.ToString();
+                        sayi2 = sayi2.Substring(0, 2);
+                        sayi = int.Parse(sayi2);
+                    }
+                }
+            }
+            #endregion
+
+            #region Transactions 
+
+            Console.WriteLine(" Dizi oluşturuldu. \r\nYapmak istediğiniz işlemi seçiniz..\r\n"
+          + " 0'e basınız : Diziyi görmek için. "
+          + "\r\n 1'e basınız : Çift değerleri görmek için."
+          + "\r\n 2'e basınız : Tek değerleri görmek için. "
+          + "\r\n 3'e basınız : Merak ettiğiniz değerden kaç adet olduğunu öğrenmek için. "
+          + "\r\n 4'e basınız : İstenilen indeksteki elemanı görmek için. ");
+
+
+            int islem = Convert.ToInt32(Console.ReadLine());
+            int ciftsayac = 0;
+            int[] ciftsayidizisi = new int[100];
+            int teksayac = 0;
+            int[] teksayidizisi = new int[100];
+
+            switch (islem)
+            {
+                //çift
+                case 1:
+
+                    Console.WriteLine("Dizinin çift degerleri ; \r\n");
+                    for (int e = 0; e < dizi.Length; e++)
+                    {
+                        int ciftdegısken = dizi[e];
+
+                        if (ciftdegısken % 2 == 0)
+                        {
+
+                            ciftsayidizisi[e] = ciftdegısken;
+                            ciftsayac++;
+                            Console.WriteLine(ciftdegısken);
+                        }
+                    }
+
+                    break;
+                //tek
+                case 2:
+
+                    for (int a = 0; a < dizi.Length; a++)
+                    {
+                        int tekdegısken = dizi[a];
+
+                        if (tekdegısken % 2 == 1)
+                        {
+                            teksayidizisi[a] = tekdegısken;
+                            teksayac++;
+                            Console.WriteLine(tekdegısken);
+                        }
+                    }
+
+                    Console.WriteLine("Tek sayi dizisi eleman sayısı : " + teksayac);
+
+                    break;
+                // aranan degerin tekrar sayısı
+                case 3:
+                    Console.WriteLine("Değeri giriniz..");
+                    int aranan = Convert.ToInt32(Console.ReadLine());
+                    int aranansayacı = 0;
+                    for (int i = 0; i < dizi.Length; i++)
+                    {
+                        int kıyas = dizi[i];
+                        if (kıyas == aranan)
+                        {
+                            aranansayacı++;
+                        }
+                    }
+                    Console.WriteLine(aranan + " degeri dizide " + aranansayacı + " kez vardır..");
+
+                    break;
+                // max 3 tekrar
+                case 4:
+
+                    Console.WriteLine("Dizinin kaçıncı elemanını görmek istersiniz? ");
+                    int istenilen = Convert.ToInt32(Console.ReadLine());
+
+                    Console.WriteLine("Dizinin " + istenilen + ".cı elemanı : " + dizi[istenilen]);
+
+                    break;
+
+                // tüm degerler
+                case 0:
+
+                    Console.WriteLine("TUM DIZI \r\n");
+                    int tum;
+                    for (int i = 0; i < dizi.Length; i++)
+                    {
+                        tum = dizi[i];
+                        Console.WriteLine(" " + i + "- " + tum);
+
+                    }
+                    //çift dizi
+                    int cft;
+
+                    Console.WriteLine("ÇİFT DIZI \r\n");
+                    for (int i = 0; i < dizi.Length; i++)
+                    {
+                        cft = dizi[i];
+
+                        if (cft % 2 == 0)
+                        {
+                            Console.WriteLine(" " + i + "- " + cft);
+                        }
+
+                    }
+
+                    //tek dizi
+                    int tk;
+                    Console.WriteLine("\r\nTEK DIZI \r\n");
+                    for (int i = 0; i < dizi.Length; i++)
+                    {
+                        tk = dizi[i];
+                        if (tk % 2 == 1)
+                        {
+                            Console.WriteLine(" " + i + "- " + tk);
+                        }
+
+                    }
+
+                    break;
+
+            }
+
+            #endregion
+            Console.Read();
+
+        }
+    }
+}
+
