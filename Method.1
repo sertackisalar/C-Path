@@ -1,0 +1,73 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Metod._1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            // 1. squaring variable taken from user.
+            // 2. creating a condition to check if the squared variable is greater than or less than 25.
+            // 3. if it is greater, print "büyüktür.", if its less, print "küçüktür.".
+
+            #region metodsuz
+            /*
+            Console.WriteLine("Bir deger giriniz..");
+            int alinanDeger = Convert.ToInt32(Console.ReadLine());
+            int control = (alinanDeger * alinanDeger);
+
+
+            if (control > 25)
+            {
+                Console.WriteLine("Büyüktür.");
+            }
+            else if (control < 25)
+            {
+                Console.WriteLine("Kücüktür.");
+            }
+            else
+            {
+                Console.WriteLine("Esittir.");
+            }
+
+
+            Console.Read();
+            */
+            #endregion
+
+            Console.WriteLine("Bir deger giriniz..");
+
+            int baslangıc = Convert.ToInt32(Console.ReadLine());
+            int sonuc = squareControl(baslangıc);
+
+            if (sonuc > 25)
+            {
+                Console.WriteLine("Büyüktür.");
+            }
+            else if (sonuc < 25)
+            {
+                Console.WriteLine("Kücüktür.");
+            }
+            else
+            {
+                Console.WriteLine("Esittir.");
+            }
+
+            Console.Read();
+        }
+
+        static int squareControl(int a)
+        {
+            int sonuc = (a * a);
+
+            return sonuc;
+        }
+
+    }
+}
