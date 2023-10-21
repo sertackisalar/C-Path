@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Method._2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // the variable taken from the user is odd or even?
+
+            Console.WriteLine("Deger giriniz.");
+            int user = Convert.ToInt32(Console.ReadLine());
+            oddOrEven(user);
+            Console.Read();
+        }
+        static void oddOrEven(int i)
+        {
+            if (i % 2 == 0)
+            {
+                Console.WriteLine("Cifttir.");
+                
+            }
+            else
+            {
+                Console.WriteLine("Tektir.");
+                
+            }
+        }
+    }
+}
