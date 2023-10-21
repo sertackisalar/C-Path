@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Method._3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // take 2 variables from the user; 
+            // print the variable is greater than the other.
+
+            Console.WriteLine("Please enter variable you want.");
+            int user1 = Convert.ToInt32(Console.ReadLine());
+            int user2 = Convert.ToInt32(Console.ReadLine());
+            printGreaterNumber(user1, user2);
+            Console.Read();
+        }
+
+        static void printGreaterNumber(int a, int b)
+        {
+            if (a > b)
+            {
+                Console.WriteLine(a + " is the greater then " + b);
+            }
+            else if (a == b)
+
+            {
+                Console.WriteLine("Plese, enter variables that are different from each other!. ");
+            }
+            else
+            {
+                Console.Write(b + " is the greater then " + a);
+            }
+        }
+
+    }
+}
