@@ -1,0 +1,69 @@
+using System;
+using System.Collections.Generic;
+using System.Dynamic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace identityCreate
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            //1. Get user input for identity.               
+            //2. Checking conditional statements.
+            //3. Create methods.
+
+            identity.GetInformation();
+            identity.Check();
+            Console.Read();
+
+        }
+        class identity
+        {
+            public static string userName;
+            public static string userSurname;
+            public static int userAge;
+
+
+            public static void GetInformation()
+            {
+                Console.WriteLine("Enter your name.");
+                userName = Console.ReadLine();
+                Console.WriteLine("Enter your surname.");
+                userSurname = Console.ReadLine();
+                Console.WriteLine("Enter your age.");
+                userAge = Convert.ToInt32(Console.ReadLine());
+
+            }
+            public static void Check()
+            {
+                Console.WriteLine("Your name : " + userName + "\r\nYour surname : " + userSurname + "\r\nYour age : " + userAge + "\r\nIf these knowledge are true press 1 to continue or press 2 to enter correct datas.");
+                int userChoise = Convert.ToInt32(Console.ReadLine());
+
+                if (userChoise == 1)
+                {
+                    Close();
+                }
+                else
+                {
+                    GetInformation();
+                    Check();
+                }
+
+                Console.Read();
+
+            }
+
+            public static void Close()
+            {
+                Console.WriteLine("Thanks for the entering your datas.");
+                Console.Read();
+            }
+
+        }
+
+    }
+}
