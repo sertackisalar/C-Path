@@ -1,0 +1,70 @@
+using Microsoft.SqlServer.Server;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Authentication.ExtendedProtection;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SmallProject
+
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Console.WriteLine();
+            Console.ReadKey();
+        }
+
+        public class calisma
+        {
+            private string beverage;
+            private string sonuc;
+
+            public void metod1()
+            {
+                // void and none parameter.
+            }
+
+            public string metod2()
+            {
+                // return and none parameter.
+
+                this.sonuc = "naber";
+                return sonuc;
+            }
+            public void metod3(string deneme1, int deneme2)
+            {
+                // void and parameter.
+            }
+            public string metod4(string ekle, string düzenle)
+            {
+                // return and parameter.
+                this.sonuc = ekle;
+                return sonuc;
+            }
+
+            // encapsulation
+            public void Beverage_set(string userBeverage)
+            {
+                this.beverage = userBeverage;
+            }
+            public string Beverage_get()
+            {
+                return this.beverage;
+            }
+
+            // property
+
+            public string Beverage_prop
+            {
+                get { return this.beverage; }
+                set { this.beverage = value; }
+            }
+        }
+
+    }
+}
