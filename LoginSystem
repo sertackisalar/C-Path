@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DoWhile //Do-While working area
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int girisHakkı = 3;
+            User nesne = new User();
+
+            do
+            {
+                Console.WriteLine("Please enter your User Name");
+                nesne.Name = Console.ReadLine();
+                Console.WriteLine("Please enter your Password.");
+                nesne.Password = Console.ReadLine();
+                if (nesne.Name == "srtc" && nesne.Password == "1234")
+                {
+                    Console.WriteLine("You entered perfectly");
+                    break;
+                }
+                
+                if (girisHakkı == 0)
+                {
+                    Console.WriteLine("Your enter trails have finished.! try again later.");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("You entered wrong password or username. Please check and enter again!");
+                    Console.WriteLine($"Your enter trails: {girisHakkı}");
+                    girisHakkı--;
+                }
+
+            } while (girisHakkı >= 0);            
+            Console.ReadKey();
+        }
+        public class User
+        {
+            private string name, password;
+            public string Name { get { return name; } set { name = value; } }
+            public string Password { get { return password; } set { password = value; } }
+        }
+    }
+}
